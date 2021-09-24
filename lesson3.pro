@@ -59,6 +59,7 @@ pred4Calc([], [BHead | BBody], C, R):- pred4Calc([], BBody , [BHead | C], R).
 pred4Calc([], [], C, R):- pred1(C, R).
 
 % 5 unit
+% DONE
 %  numlst(123, X).
 numlst(N, Lst):- \+var(N) ,N =:= 0, Lst = [0].
 numlst(N, Lst):- \+var(N) ,N =\= 0, calcNumlst(N, [] ,Lst).
