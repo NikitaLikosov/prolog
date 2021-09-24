@@ -2,7 +2,7 @@ d1(X) :- X mod 2 =:= 0 .
 
 fact(N, F) :- N=< 0, F = 1.
 fact(N, F) :- N > 0, 
-      N1 is N - 2, fact(N1, F1), F is N * F1.
+      N1 is N - 1, fact(N1, F1), F is N * F1.
 
 
 simple(N) :- simpleCalc(N, N).
@@ -61,7 +61,7 @@ nextMonth(dec, jan).
 
 
 
-nextDate(date(M1, D1), date(M2, D2)) :- validMonth(M1, D1), ND is D1 + 1, validMonth(M1, ND), date(M1, D1) = date(M2, D2).
+nextDate(date(M1, D1), date(M2, D2)) :- validMonth(M1, D1), ND is D1 + 1, validMonth(M1, ND), date(M1, ND) = date(M2, D2).
 nextDate(date(M1, D1), date(M2, D2)) :- validMonth(M1, D1), ND is D1 + 1, lastDate(M1, ND), nextMonth(M1, NM), date(M2, D2) = date(NM, 1). 
 
 
